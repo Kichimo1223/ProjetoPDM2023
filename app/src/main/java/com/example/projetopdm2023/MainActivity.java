@@ -7,7 +7,6 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     public EditText Nomeusuario;
-    public EditText Numerouser;
     public Button Registrar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
