@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#390257"
     tools:context=".MainActivity">
 
     <EditText
@@ -15,6 +16,7 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Medium"
+        android:textColor="#7986CB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -46,26 +48,57 @@
         android:layout_height="wrap_content"
         android:text="Ordem"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#F40404"
         app:layout_constraintBottom_toTopOf="@+id/Nomeusuario"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.29"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.322"
         tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/sera"
+        android:id="@+id/Sera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
         android:inputType="textPassword"
-        tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="195dp" />
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/Registrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Nomeusuario"
+        app:layout_constraintVertical_bias="0.121"
+        tools:ignore="LabelFor,MissingConstraints,SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Senha?"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="205dp" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#7986CB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Sera"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.292"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textNome"
+        android:layout_width="86dp"
+        android:layout_height="39dp"
+        android:text="Nome do Agente"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#7986CB"
+        app:layout_constraintBottom_toTopOf="@+id/textSenha"
+        app:layout_constraintEnd_toStartOf="@+id/Nomeusuario"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.745"
+        tools:ignore="HardcodedText,TextSizeCheck" />
 </android.support.constraint.ConstraintLayout>
