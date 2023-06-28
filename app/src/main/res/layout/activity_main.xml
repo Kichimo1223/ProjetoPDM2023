@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/Nomeusuario"
+        android:id="@+id/nomeusuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints=""
@@ -27,7 +27,7 @@
         tools:text="Nome" />
 
     <Button
-        android:id="@+id/Registrar"
+        android:id="@+id/registrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#E81313"
@@ -37,7 +37,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Nomeusuario"
+        app:layout_constraintTop_toBottomOf="@+id/nomeusuario"
         app:layout_constraintVertical_bias="0.658"
         tools:ignore="HardcodedText,TextContrastCheck"
         tools:visibility="visible" />
@@ -49,7 +49,7 @@
         android:text="Ordem"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#F40404"
-        app:layout_constraintBottom_toTopOf="@+id/Nomeusuario"
+        app:layout_constraintBottom_toTopOf="@+id/nomeusuario"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.29"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,18 +58,18 @@
         tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/Sera"
+        android:id="@+id/sera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:ems="10"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/Registrar"
+        app:layout_constraintBottom_toTopOf="@+id/registrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Nomeusuario"
+        app:layout_constraintTop_toBottomOf="@+id/nomeusuario"
         app:layout_constraintVertical_bias="0.121"
         tools:ignore="LabelFor,MissingConstraints,SpeakableTextPresentCheck" />
 
@@ -81,7 +81,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#7986CB"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/Sera"
+        app:layout_constraintEnd_toStartOf="@+id/sera"
         app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -96,7 +96,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="#7986CB"
         app:layout_constraintBottom_toTopOf="@+id/textSenha"
-        app:layout_constraintEnd_toStartOf="@+id/Nomeusuario"
+        app:layout_constraintEnd_toStartOf="@+id/nomeusuario"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.745"
