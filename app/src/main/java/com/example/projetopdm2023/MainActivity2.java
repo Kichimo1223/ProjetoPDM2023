@@ -28,15 +28,26 @@ public class MainActivity2 extends AppCompatActivity {
     public ListView preenchimento;
 
     ArrayAdapter criaturaArrayAdapter;
+    Bancodds Bancodds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+    adcnomecria = findViewById(R.id.adcnomecria);
+    adicionarbc = findViewById(R.id.adicionarbc);
+    atualizarcria = findViewById(R.id.atualizarcria);
+    nomecria = findViewById(R.id.nomecria);
+    elemento = findViewById(R.id.elemento);
+    vd = findViewById(R.id.elemento);
+    preenchimento = findViewById(R.id.preenchimento);
 
+   adcnomecria.setOnClickListener(new View.OnClickListener() {
+       @Override
+       public void onClick(View v) {
+           Criatura criatura = null;
 
-
-
+       }
+   }
     }
-}
