@@ -1,52 +1,62 @@
 package com.example.projetopdm2023;
 
 public class Criatura {
-    private int vd;
+    private int ID;
+    private int valords;
     private String nmcria;
-    private String element ;
+    private String element;
 
-    public Criatura (){}
+    public Criatura() {
+    }
 
-    public Criatura(int vd, String nmcria, String element) {
-        this.setIdUsuario(vd);
-        this.setNomeUsuario(nmcria);
-        this.setNomeUsuario(element);
+    public Criatura(int ID, String nmcria, String element) {
+        this.setIdUsuario(ID);
+        this.setNomeCriatura(nmcria);
+        this.setNomedoelemet(element);
+        this.setVdCriatura(valords);
     }
 
     public Criatura(String nmcria, int vd) {
-        this.nmcria =  nmcria;
-        this.vd = vd;
+        this.nmcria = nmcria;
+        this.valords = valords;
     }
 
     @Override
     public String toString() {
-        return "Usuario{" + "idUsuario=" + vd + ", nomeUsuario='" + nmcria + '\'' + ", setNomeUsuario=" + element + '}';
-        //"Usuario{idUsuario=1, nomeUsuario=Ronan, idadeUsuario=30}"
+        return "Criatura{" + "idUsuario=" + ID + ", nomeCriatura='" + nmcria + '\'' + ", setNomedoelemet" + element + "setVdCriatura =" + valords + "}";
     }
 
     protected int getIdUsuario() {
-        return vd;
+        return ID;
     }
 
-    protected void setIdUsuario(int vd) {
+    protected void setIdUsuario(int ID) {
 
-        this.vd = vd;
+        this.ID = ID;
     }
 
-    protected String getNomeUsuario() {
+    protected String getNomeCriatura() {
         return nmcria;
     }
 
-    protected void setNomeUsuario(String nmcria) {
+    protected void setNomeCriatura(String nmcria) {
         this.nmcria = nmcria;
     }
 
-    protected String setNomeUsuario() {
+    protected String setNomedoelemet() {
         return element;
     }
 
-    protected void setNomeUsuari(String element) {
+    protected void setNomedoelement(String element) {
         this.element = element;
-}
-
     }
+
+    protected int setVdCriatura() {
+        return valords;
+    }
+
+    protected void setVdCriatura(int valords) {
+        this.valords = valords;
+    }
+
+}
