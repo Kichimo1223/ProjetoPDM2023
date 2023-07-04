@@ -6,11 +6,11 @@ public class Criatura {
     private String nmcria;
     private String element;
 
-    public Criatura() {
+    public Criatura(int i, String s, int parseInt) {
     }
 
     public Criatura(int ID, String nmcria, String element, int valords) {
-        this.setIdUsuario(ID);
+        this.setIdCriatura(ID);
         this.setNomeCriatura(nmcria);
         this.setNomedoelemet(element);
         this.setVdCriatura(valords);
@@ -23,14 +23,14 @@ public class Criatura {
 
     @Override
     public String toString() {
-        return "Criatura{" + "idUsuario=" + ID + ", nomeCriatura='" + nmcria + '\'' + ", setNomedoelemet" + element + "setVdCriatura =" + valords + "}";
+        return "Criatura{" + "idCriatura=" + ID + ", nomeCriatura='" + nmcria + '\'' + ", setNomedoelemet" + element + "setVdCriatura =" + valords + "}";
     }
 
-    protected int getIdUsuario() {
+    protected int getIdCriatura() {
         return ID;
     }
 
-    protected void setIdUsuario(int ID) {
+    protected void setIdCriatura(int ID) {
 
         this.ID = ID;
     }

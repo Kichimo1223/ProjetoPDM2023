@@ -7,8 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.Nullable;
 
-import androidx.annotation.Nullable;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +40,7 @@ public class Bancodds extends SQLiteOpenHelper {
     }
 
 
-    public boolean adicionarUsuario(Criatura criatura) {
+    public boolean adicionarCriatura(Criatura criatura) {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -60,11 +58,11 @@ public class Bancodds extends SQLiteOpenHelper {
     }
 
 
-    public boolean atualizarUsuario(Criatura criatura) {
+    public boolean atualizarCriatura(Criatura criatura) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(ID, criatura.getIdUsuario());
+        contentValues.put(ID, criatura.getIdCriatura());
         contentValues.put(nomecria, criatura.getNomeCriatura());
         contentValues.put(element, criatura.getNomedoelemet());
         contentValues.put(VdCria, criatura.getVdCriatura());
@@ -72,7 +70,7 @@ public class Bancodds extends SQLiteOpenHelper {
 
         long atualizarSucedido = db.update(Tblcria,
                 contentValues,
-                USUARIO_ID + "=" + usuario.getIdUsuario(),
+                ID + "=" + criatura.getIdCriatura(),
                 null);
         db.close();
 
@@ -82,11 +80,11 @@ public class Bancodds extends SQLiteOpenHelper {
 
     }
 
-    public List<Usuario> getListaUsuarios() {//Para importar List, pode ser usado o atalho com Alt+Enter (para escolher a ação) ou Shift+Alt+Enter (para pegar o pacote sugerido pela ferramenta Android Studio). Tem que ser do pacote "java.util.List"
+    public List<Criatura> getListaCriatura() {//Para importar List, pode ser usado o atalho com Alt+Enter (para escolher a ação) ou Shift+Alt+Enter (para pegar o pacote sugerido pela ferramenta Android Studio). Tem que ser do pacote "java.util.List"
 
-        List<Usuario> listaUsuarios = new ArrayList<>();
+        List<Criatura> listaCriatura = new ArrayList<>();
 
-        String queryStatement = "SELECT * FROM " + TABELA_USUARIO;
+        String queryStatement = "SELECT * FROM " + Tblcria;
 
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -96,13 +94,14 @@ public class Bancodds extends SQLiteOpenHelper {
 
             if (cursor.moveToFirst()) {
                 do {
-                    int usuarioCod = cursor.getInt(0);
-                    String usuarioNome = cursor.getString(1);
-                    int usuarioIdade = cursor.getInt(2);
+                    int ID =cursor.getInt(0);
+                    String nmcria = cursor.getString(1);
+                    String element = cursor.getString(2);
+                    int valords = cursor.getInt(3);
 
 
-                    Usuario usuario = new Usuario(usuarioCod, usuarioNome, usuarioIdade);
-                    listaUsuarios.add(usuario);
+                    Criatura criatura = new Criatura(ID, nmcria, element, valords);
+                    listaCriatura.add(criatura);
                 } while (cursor.moveToNext());
             } else {
 
@@ -112,13 +111,13 @@ public class Bancodds extends SQLiteOpenHelper {
         }
         db.close();
 
-        return listaUsuarios;
+        return listaCriatura;
     }
 
-    public boolean excluirUsuario(Usuario usuario) {
+    public boolean excluirCriatura(Criatura criatura) {
         SQLiteDatabase db = this.getWritableDatabase();
         String queryString =
-                "DELETE FROM " + TABELA_USUARIO + " WHERE " + USUARIO_ID + " = " + usuario.getIdUsuario();
+                "DELETE FROM " + Tblcria + " WHERE " + ID + " = " + criatura.getIdCriatura();
 
         Cursor cursor = db.rawQuery(queryString, null);
 
