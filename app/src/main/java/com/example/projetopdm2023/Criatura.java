@@ -9,16 +9,16 @@ public class Criatura {
     public Criatura() {
     }
 
-    public Criatura(int ID, String nmcria, String element) {
+    public Criatura(int ID, String nmcria, String element, int valords) {
         this.setIdUsuario(ID);
         this.setNomeCriatura(nmcria);
         this.setNomedoelemet(element);
         this.setVdCriatura(valords);
     }
 
-    public Criatura(String nmcria, int vd) {
+    public Criatura(int ID, String nmcria, String element, float valords ) {
         this.nmcria = nmcria;
-        this.valords = valords;
+        this.valords = (int) valords;
     }
 
     @Override
@@ -43,15 +43,18 @@ public class Criatura {
         this.nmcria = nmcria;
     }
 
-    protected String setNomedoelemet() {
-        return element;
+    protected String getNomedoelemet() {
+        return this.element;
     }
 
     protected void setNomedoelement(String element) {
         this.element = element;
     }
+        private void setNomedoelemet(String element) {
 
-    protected int setVdCriatura() {
+    }
+
+    protected int getVdCriatura() {
         return valords;
     }
 

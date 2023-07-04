@@ -14,10 +14,11 @@ import java.util.List;
 
 public class Bancodds extends SQLiteOpenHelper {
 
-    protected static final String TABELA_USUARIO = "TABELA_USUARIO";
-    protected static final String USUARIO_ID = "ID";
-    protected static final String USUARIO_NOME = "USUARIO_NOME";
-    protected static final String USUARIO_IDADE = "USUARIO_IDADE";
+    protected static final String ID = "ID";
+    protected static final String Tblcria = "Tblcria";
+    protected static final String nomecria = "nomecria";
+    protected static final String element = "element";
+    protected static final String VdCria = "VdCria";
 
 
     public Bancodds(@Nullable Context context) {
@@ -27,9 +28,9 @@ public class Bancodds extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String statement = "CREATE TABLE " + TABELA_USUARIO +
-                " (" + USUARIO_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + USUARIO_NOME + " TEXT, " + USUARIO_IDADE + " INT)";
+        String statement = "CREATE TABLE " + Tblcria +
+                " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + nomecria + " TEXT, " + element + " TEXT, " + VdCria + " INT)";
 
 
         db.execSQL(statement);
@@ -41,15 +42,16 @@ public class Bancodds extends SQLiteOpenHelper {
     }
 
 
-    public boolean adicionarUsuario(Usuario usuario) {
+    public boolean adicionarUsuario(Criatura criatura) {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(USUARIO_NOME, usuario.getNomeUsuario());
-        contentValues.put(USUARIO_IDADE, usuario.getIdadeUsuario());
+        contentValues.put(nomecria, criatura.getNomeCriatura());
+        contentValues.put(element, criatura.getNomedoelemet());
+        contentValues.put(VdCria, criatura.getVdCriatura());
 
-             long inserirSucedido = db.insert(TABELA_USUARIO, null, contentValues);
+             long inserirSucedido = db.insert(Tblcria, null, contentValues);
         db.close();
 
         return inserirSucedido != -1;
@@ -58,16 +60,17 @@ public class Bancodds extends SQLiteOpenHelper {
     }
 
 
-    public boolean atualizarUsuario(Usuario usuario) {
+    public boolean atualizarUsuario(Criatura criatura) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put(USUARIO_NOME, usuario.getNomeUsuario());
-        contentValues.put(USUARIO_IDADE, usuario.getIdadeUsuario());
-        contentValues.put(USUARIO_ID, usuario.getIdUsuario());
+        contentValues.put(ID, criatura.getIdUsuario());
+        contentValues.put(nomecria, criatura.getNomeCriatura());
+        contentValues.put(element, criatura.getNomedoelemet());
+        contentValues.put(VdCria, criatura.getVdCriatura());
 
 
-        long atualizarSucedido = db.update(TABELA_USUARIO,
+        long atualizarSucedido = db.update(Tblcria,
                 contentValues,
                 USUARIO_ID + "=" + usuario.getIdUsuario(),
                 null);

@@ -61,10 +61,3 @@ public class MainActivity2 extends AppCompatActivity {
                 } catch (Exception e) {
                     Toast.makeText(MainActivity.this, "Erro na criação do usuário!", Toast.LENGTH_LONG).show();
                 }
-            }
-        });
-        protected static final String ID = "ID";
-        protected static final String Tblcria = "Tblcria";
-        protected static final String nomecria = "nomecria";
-        protected static final String element = "element";
-        protected static final String VdCria = "VdCria";

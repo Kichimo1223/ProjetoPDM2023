@@ -107,7 +107,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
-            android:text="ID User"
+            android:text="ID agente"
             android:textColor="#FF0505" />
 
         <EditText
